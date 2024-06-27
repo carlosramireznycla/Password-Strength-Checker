@@ -31,7 +31,7 @@ def check_password_compliance(password, username, common_passwords, min_length=1
 
     if len(password) < min_length:
         compliant = False
-        messages.append(f"- Password length must be at least {min_length} characters.")
+        messages.append("- Password length must be at least {} characters.".format(min_length))
 
     if require_uppercase and not re.search(r'[A-Z]', password):
         compliant = False
@@ -75,6 +75,7 @@ password = input("Enter your password: ")
 common_passwords = ["password", "123456", "123456789", "qwerty", "abc123", "password1"]  # Add more common passwords as needed
 compliant, message = check_password_compliance(password, username, common_passwords)
 print(message)
+
 
 
 
