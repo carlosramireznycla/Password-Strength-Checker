@@ -1,7 +1,8 @@
 import re
+import tkinter as tk
+from tkinter import messagebox
 
 def check_password_compliance(password, username, common_passwords, min_length=10, require_uppercase=True, require_digit=True, require_special=True):
-    # List of state names
     states = [
         "alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut",
         "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa",
@@ -12,19 +13,15 @@ def check_password_compliance(password, username, common_passwords, min_length=1
         "texas", "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming"
     ]
 
-    # Construct a regex pattern to match any state name, case-insensitive
     state_pattern = r'(' + '|'.join(states) + r')'
     
-    # Initialize compliance status and messages
     compliant = True
     messages = []
 
-    # Check if password contains the username
     if username.lower() in password.lower():
         compliant = False
         messages.append("- Password must not contain your username.")
 
-    # Check for state names
     if re.search(state_pattern, password, flags=re.IGNORECASE):
         compliant = False
         messages.append("- Password must not contain the name of any of the 50 United States.")
@@ -49,7 +46,6 @@ def check_password_compliance(password, username, common_passwords, min_length=1
         compliant = False
         messages.append("- Password is too common and easy to guess.")
     
-    # Check for ascending or descending sequences like "1234" or "4321"
     for i in range(len(password) - 3):
         segment = password[i:i+4]
         if segment.isdigit() and (segment in '0123456789' or segment in '9876543210'):
@@ -57,7 +53,6 @@ def check_password_compliance(password, username, common_passwords, min_length=1
             messages.append("- Password must not contain sequences like '1234' or '4321'.")
             break
 
-    # Check for repeated characters like "aaaa"
     for i in range(len(password) - 3):
         if password[i:i+4] == password[i] * 4:
             compliant = False
@@ -69,12 +64,29 @@ def check_password_compliance(password, username, common_passwords, min_length=1
     else:
         return False, "Password does not meet the following requirements:\n" + "\n".join(messages)
 
-# Example usage:
-username = input("Enter your username: ")
-password = input("Enter your password: ")
-common_passwords = ["password", "123456", "123456789", "qwerty", "abc123", "password1"]  # Add more common passwords as needed
-compliant, message = check_password_compliance(password, username, common_passwords)
-print(message)
+def check_password():
+    username = username_entry.get()
+    password = password_entry.get()
+    common_passwords = ["password", "123456", "123456789", "qwerty", "abc123", "password1"]
+
+    compliant, message = check_password_compliance(password, username, common_passwords)
+    messagebox.showinfo("Password Compliance", message)
+
+app = tk.Tk()
+app.title("Password Compliance Checker")
+
+tk.Label(app, text="Username:").grid(row=0, column=0, padx=10, pady=10)
+username_entry = tk.Entry(app)
+username_entry.grid(row=0, column=1, padx=10, pady=10)
+
+tk.Label(app, text="Password:").grid(row=1, column=0, padx=10, pady=10)
+password_entry = tk.Entry(app, show="*")
+password_entry.grid(row=1, column=1, padx=10, pady=10)
+
+check_button = tk.Button(app, text="Check Password", command=check_password)
+check_button.grid(row=2, column=0, columnspan=2, pady=20)
+
+app.mainloop()
 
 
 
