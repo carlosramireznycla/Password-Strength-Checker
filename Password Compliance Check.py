@@ -1,6 +1,7 @@
 import re
 import tkinter as tk
 from tkinter import messagebox
+from PIL import Image, ImageTk
 
 def check_password_compliance(password, username, common_passwords, min_length=10, require_uppercase=True, require_digit=True, require_special=True):
     states = [
@@ -68,20 +69,38 @@ def check_password():
     username = username_entry.get()
     password = password_entry.get()
     common_passwords = ["password", "123456", "123456789", "qwerty", "abc123", "password1"]
-
     compliant, message = check_password_compliance(password, username, common_passwords)
     messagebox.showinfo("Password Compliance", message)
+
+def toggle_password_visibility():
+    if password_entry.cget('show') == '*':
+        password_entry.config(show='')
+        show_button.config(image=eye_open_image)
+    else:
+        password_entry.config(show='*')
+        show_button.config(image=eye_closed_image)
 
 app = tk.Tk()
 app.title("Password Compliance Checker")
 
 tk.Label(app, text="Username:").grid(row=0, column=0, padx=10, pady=10)
-username_entry = tk.Entry(app)
-username_entry.grid(row=0, column=1, padx=10, pady=10)
+username_frame = tk.Frame(app)
+username_frame.grid(row=0, column=1, padx=10, pady=10)
+username_entry = tk.Entry(username_frame)
+username_entry.pack(side="left", fill="x", expand=True)
 
 tk.Label(app, text="Password:").grid(row=1, column=0, padx=10, pady=10)
-password_entry = tk.Entry(app, show="*")
-password_entry.grid(row=1, column=1, padx=10, pady=10)
+password_frame = tk.Frame(app)
+password_frame.grid(row=1, column=1, padx=10, pady=10)
+password_entry = tk.Entry(password_frame, show='*')
+password_entry.pack(side="left", fill="x", expand=True)
+
+# Load the icons
+eye_open_image = ImageTk.PhotoImage(Image.open("eye-open-symbol.png").resize((20, 20)))
+eye_closed_image = ImageTk.PhotoImage(Image.open("eye-closed-symbol.png").resize((20, 20)))
+
+show_button = tk.Button(password_frame, image=eye_closed_image, command=toggle_password_visibility, bd=0)
+show_button.pack(side="right")
 
 check_button = tk.Button(app, text="Check Password", command=check_password)
 check_button.grid(row=2, column=0, columnspan=2, pady=20)
