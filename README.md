@@ -35,6 +35,12 @@ Ensure your passwords are up to the mark with Password Compliance Checker! This 
 ```bash
 python3 Password\ Compliance\ Check.py 
 ```
+2. (Optional) Enter username
+3. Enter a password in the entry field and click "Check Password".
+4. (Optional) You can click the eye icon to display the text.
+5. Result will display in a pop-up window below.
+
 ![alt text](image.png)
+![alt text](image-2.png)
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/LICENSE) file for details.
