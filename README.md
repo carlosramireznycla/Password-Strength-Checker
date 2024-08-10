@@ -32,7 +32,7 @@ Ensure your passwords are up to the mark with Password Compliance Checker! This 
 
 ## Usage
 1. From your terminal, run "Password Compliance Check.py"
-''bash
+```bash
 python3 Password\ Compliance\ Check.py 
 
 ## License
