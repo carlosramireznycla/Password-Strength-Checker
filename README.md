@@ -4,7 +4,7 @@
 Ensure your passwords are up to the mark with Password Compliance Checker! This Python-based GUI application scrutinizes your passwords for complexity, including length, digit inclusion, special characters, and avoidance of common patterns, providing you with instant feedback to enhance your security.
 
 ## Table of Contents
-- [Features] (#features)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -28,10 +28,7 @@ Ensure your passwords are up to the mark with Password Compliance Checker! This 
     - (Optional) Usage of provided username in password
 
 ## Installation
-- Install the required library: [requirements.txt]
-
-```bash
-# Example command
-pip install example-package
-# Password Strength Checker
- By the time...
+- Install the required library: [requirements.txt](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/requirements.txt)
+## Usage
+## License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/LICENSE) file for details.
