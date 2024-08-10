@@ -41,6 +41,7 @@ python3 Password\ Compliance\ Check.py
 5. Result will display in a pop-up window below.
 
 ![alt text](image.png)
+![alt text](image-3.png)
 ![alt text](image-2.png)
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/LICENSE) file for details.
