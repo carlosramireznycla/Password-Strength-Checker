@@ -29,6 +29,11 @@ Ensure your passwords are up to the mark with Password Compliance Checker! This 
 
 ## Installation
 - Install the required library: [requirements.txt](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/requirements.txt)
+
 ## Usage
+1. From your terminal, run "Password Compliance Check.py"
+''bash
+python3 Password\ Compliance\ Check.py 
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/LICENSE) file for details.
