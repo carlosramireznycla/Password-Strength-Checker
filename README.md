@@ -12,7 +12,7 @@ Ensure your passwords are up to the mark with Password Compliance Checker! This 
 
 ## Features
 - Validates passwords against a comprehensive set of criteria.
-- Provides actionalble real-time feedback on required complexity criteria.
+- Provides actionalble feedback on required complexity criteria.
 - Compatible with multiple operating systems.
 - Toggle feature to show or hide the password while typing.
 - GUI for simple interaction.
@@ -35,6 +35,6 @@ Ensure your passwords are up to the mark with Password Compliance Checker! This 
 ```bash
 python3 Password\ Compliance\ Check.py 
 ```
-
+![alt text](image.png)
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/LICENSE) file for details.
