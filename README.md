@@ -40,8 +40,14 @@ python3 Password\ Compliance\ Check.py
 4. (Optional) You can click the eye icon to display the text.
 5. Result will display in a pop-up window below.
 
+After launching application:
 ![alt text](image.png)
+
+Username + Password supplied with the visibility togged on:
 ![alt text](image-3.png)
+
+New window displaying how your provided password matches up to the criteria:
 ![alt text](image-2.png)
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/carlosramireznycla/Password-Strength-Checker/blob/main/LICENSE) file for details.
