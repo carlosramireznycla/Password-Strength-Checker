@@ -40,13 +40,13 @@ python3 Password\ Compliance\ Check.py
 4. (Optional) You can click the eye icon to display the text.
 5. Result will display in a pop-up window below.
 
-After launching application:
+<b>After launching application:</b>
 ![alt text](image.png)
 
-Username + Password supplied with the visibility togged on:
+<b>Username + Password supplied with the visibility togged on:</b>
 ![alt text](image-3.png)
 
-New window displaying how your provided password matches up to the criteria:
+<b>New window displaying how your provided password matches up to the criteria:</b>
 ![alt text](image-2.png)
 
 ## License
