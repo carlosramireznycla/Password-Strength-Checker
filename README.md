@@ -43,8 +43,10 @@ python3 Password\ Compliance\ Check.py
 <b>After launching application:</b>
 ![alt text](image.png)
 
+
 <b>Username + Password supplied with the visibility togged on:</b>
 ![alt text](image-3.png)
+
 
 <b>New window displaying how your provided password matches up to the criteria:</b>
 ![alt text](image-2.png)
